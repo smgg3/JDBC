@@ -5,17 +5,15 @@ public class JDBCProperties{
 	
 	public static void main(String[] args) throws ClassNotFoundException,SQLException,IOException{
 		
-		FileInputStream fis=new FileInputStream("UserDefinedDBDetails.properties");
+		FileInputStream fis=null;
 			
 			Properties p=new Properties();
 			
 			p.load(fis);
 		try{
+			fis=new FileInputStream("UserDefinedDBDetails.properties");
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
-			
-			
 			
 			
 			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.226.1:1521:XE",p.getProperty("my.user"),p.getProperty("my.password"));
