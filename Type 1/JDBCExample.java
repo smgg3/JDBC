@@ -11,7 +11,7 @@ public class JDBCExample{
 		}
 		try{
 			//establish connection
-		Connection con=DriverManager.getConnection("jdbc:odbc:DriverOneDataSource","system","umkc123");
+		Connection con=DriverManager.getConnection("jdbc:odbc:Type1DataSource","system","umkc123");
 		System.out.println("After Connection");
 		//creating statement
 		Statement st=con.createStatement();
@@ -19,7 +19,7 @@ public class JDBCExample{
 		ResultSet rs=st.executeQuery("select * from empl");
 		
 		while(rs.next()){
-			System.out.println("Hello");
+			System.out.println(rs.getString(2));
 		}
 		
 		}

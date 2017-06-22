@@ -4,7 +4,7 @@ class JDBCConnection{
 	public static void main(String[] args) throws ClassNotFoundException,SQLException{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","umkc123");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@192.168.226.1:1521:XE","system","umkc123");
 		
 		Statement st=con.createStatement();
 		
@@ -12,7 +12,7 @@ class JDBCConnection{
 		
 		while(rs.next()){
 			
-			System.out.println(rs.getInt(1)+rs.getString(2));
+			System.out.println(rs.getInt(1)+""+rs.getString(2));
 			
 		}
 		
